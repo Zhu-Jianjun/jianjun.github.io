@@ -2129,7 +2129,7 @@ input, select, textarea {
 
 		.image.fit {
 			display: block;
-			margin: 0 0 em 0;
+			margin: 0; /* was an invalid "0 0 em 0" that browsers ignored; 0 keeps the same look */
 			width: 100%;
 		}
 
@@ -2149,7 +2149,7 @@ input, select, textarea {
 			.image.avatar img {
 				border-radius: 100%;
 				width: 220%;
-				height: 10vw; /*add height to adjust the profile image */
+				height: auto; /* keep the photo's 3:2 shape at every screen width (10vw squashed it on smaller screens) */
 				position: relative; /* positions and left are used to move the profile image to the left a little bit */
   				left: -120px;
 			}
